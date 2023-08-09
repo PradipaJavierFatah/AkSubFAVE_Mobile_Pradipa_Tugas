@@ -51,11 +51,10 @@ public class RegisterFragment extends Fragment {
 
         FirebaseApp.initializeApp(getActivity());
         mAuth = FirebaseAuth.getInstance();
-        firebaseDatabase = FirebaseDatabase.getInstance("https://fave-mobile-final-project-default-rtdb.asia-southeast1.firebasedatabase.app/");
+        firebaseDatabase = FirebaseDatabase.getInstance("https://training-firebase-9516a-default-rtdb.asia-southeast1.firebasedatabase.app/");
 
         et_email = view.findViewById(R.id.et_email);
         et_firstName = view.findViewById(R.id.et_firstname);
-        et_lastName = view.findViewById(R.id.et_lastname);
         rg_gender = view.findViewById(R.id.rg_gender);
         et_password = view.findViewById(R.id.et_password);
         et_confPassword = view.findViewById(R.id.et_confPassword);
@@ -75,9 +74,6 @@ public class RegisterFragment extends Fragment {
                     case R.id.rb_female:
                         gender[0] = "female";
                         break;
-                    case R.id.rb_none:
-                        gender[0] = "none";
-                        break;
                     default:
                         gender[0] = "";
                         break;
@@ -90,13 +86,11 @@ public class RegisterFragment extends Fragment {
 
             String email = et_email.getText().toString();
             String firstname = et_firstName.getText().toString();
-            String lastname = et_lastName.getText().toString();
-            String fullname = firstname + " " + lastname;
             String password = et_password.getText().toString();
             String confPass = et_confPassword.getText().toString();
 
             progressBar.setVisibility(View.GONE);
-            if (TextUtils.isEmpty(email) || TextUtils.isEmpty(firstname) || TextUtils.isEmpty(lastname) || TextUtils.isEmpty(gender[0]) || TextUtils.isEmpty(password) || TextUtils.isEmpty((confPass))) {
+            if (TextUtils.isEmpty(email) || TextUtils.isEmpty(firstname) || TextUtils.isEmpty(gender[0]) || TextUtils.isEmpty(password) || TextUtils.isEmpty((confPass))) {
                 Toast.makeText(getContext(), "Fill in all the required fields!", Toast.LENGTH_LONG).show();
             } else if (!email.matches("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+")) {
                 Toast.makeText(getContext(), "Email must be valid", Toast.LENGTH_SHORT).show();
@@ -117,7 +111,7 @@ public class RegisterFragment extends Fragment {
                                     return;
                                 }
                                 userRef = firebaseDatabase.getReference("users").child(mAuth.getCurrentUser().getUid());
-                                userRef.setValue(new User(email, fullname, gender[0]));
+                                userRef.setValue(new User(email, firstname, gender[0]));
                                 editor.putString("email",email);
                                 editor.apply();
                                 editor.putString("password",password);

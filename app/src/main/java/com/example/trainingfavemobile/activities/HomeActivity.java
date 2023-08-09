@@ -41,7 +41,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         mAuth = FirebaseAuth.getInstance();
-        firebaseDatabase = FirebaseDatabase.getInstance("https://fave-mobile-final-project-default-rtdb.asia-southeast1.firebasedatabase.app/");
+        firebaseDatabase = FirebaseDatabase.getInstance("https://training-firebase-9516a-default-rtdb.asia-southeast1.firebasedatabase.app/");
         mAuth.addAuthStateListener(authStateListener);
         firebaseUser = mAuth.getCurrentUser();
         userRef = firebaseDatabase.getReference().child("users").child(firebaseUser.getUid());
