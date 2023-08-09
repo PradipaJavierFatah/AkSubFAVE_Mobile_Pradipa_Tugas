@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1091741675795",
+    "firebase_url": "https://fave-mobile-final-project-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "fave-mobile-final-project",
+    "storage_bucket": "fave-mobile-final-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091741675795:android:0a948373daa11272d92ae6",
+        "android_client_info": {
+          "package_name": "com.example.trainingfavemobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1091741675795-8r6dn6m9gu4b0bq6sgvjcabjebernssk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGyrXzvmkn4vevFPDuA5uiMZasbquUZgM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1091741675795-8r6dn6m9gu4b0bq6sgvjcabjebernssk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
